@@ -1,0 +1,63 @@
+module.exports = function(sequelize, DataTypes){
+    const User = sequelize.define('user',{
+        email:{
+            allowNull:false,
+            type:DataTypes.STRING,
+            unique:true,
+        },
+        password:{
+            allowNull:false,
+            type:DataTypes.STRING,
+            validate:{
+                min:[7],
+            }
+        },
+        username:{
+            type:DataTypes.STRING,
+            allowNull:false,
+            unique:true,
+            validate:{
+                min:[5],
+                max:[25]
+            },
+        },
+        userAddress:{
+            type:DataTypes.STRING,
+            allowNull:false,
+        },
+        userSecondAddress:{
+            type:DataTypes.STRING,
+        },
+        userState:{
+            type:DataTypes.STRING,
+            allowNull:false
+        },
+        userCity:{
+            type:DataTypes.STRING,
+            allowNull:false
+        },
+        userZipcode:{
+            type:DataTypes.INTEGER,
+            allowNull:false
+        },
+        phoneNumber:{
+            type:DataTypes.STRING,
+            allowNull:false,
+        },
+        firstName:{
+            type:DataTypes.STRING,
+            allowNull:false,
+        },
+        lastName:{
+            type:DataTypes.STRING,
+            allowNull:false
+        },
+        isAdmin:{
+            type:DataTypes.BOOLEAN,
+        }
+    })
+    User.associate = models => {
+        User.hasMany(models['drink'])
+    }
+    return User
+}
