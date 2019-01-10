@@ -1,5 +1,5 @@
 {
-  "name": "brew2userver",
+  "name": "brew2u-server",
   "version": "1.0.0",
   "description": "Red badge server",
   "main": "app.js",
@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node app.js"
   },
-  "author": "Mitch, Sam, Walter",
+  "author": "Sam and Walter",
   "license": "MIT",
   "dependencies": {
     "bcryptjs": "^2.4.3",
@@ -18,6 +18,6 @@
     "mysql2": "^1.6.4",
     "pg": "^7.4.1",
     "pg-hstore": "^2.3.2",
-    "sequelize": "^4.37.0"
+    "sequelize": "^4.42.0"
   }
 }
